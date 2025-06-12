@@ -1,65 +1,79 @@
-import styled from 'styled-components';
-// A palheta de cores (SITE:  https://colorhunt.co/palette/0118d81b56fde9dfc3fff8f8)
-// color: 0118D8
-// color: 1B56FD
-// color: E9DFC3
-// color: FFF8F8
-export const HeaderComponent = styled.header`
-    text-align: center;
-    text-transform: uppercase;
-    height: 7rem;
-    background-color: #E9DFC3;
+export const Content = styled.div`
+    min-height: 100vh;
+    background-color: #0118D8;
     color: #FFF8F8;
     display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const UnsortedList = styled.ul`
-    display: flex;
     flex-direction: column;
-    gap: 10px;
     justify-content: center;
     align-items: center;
-    list-style-type: none;
-    font-size: 1.5em;
-`;
+    padding: 20px;
 
-export const LinkItem = styled.li`
-    text-decoration: none;
-    color: #1B56FD;
-    &:hover {
-        background-color: #FFF8F8;
+    h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #FFF8F8;
+    }
+
+    form {
+        background-color: #1B56FD;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+
+        label {
+            text-align: left;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #FFF8F8;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            background-color: #FFF8F8;
+            color: #0118D8;
+        }
+
+        input:focus {
+            border: 2px solid #E9DFC3;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #0118D8;
+            background-color: #E9DFC3;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #FFF8F8;
+        }
+
+        button:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+
+        p {
+            color: #ff5b5b;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -10px;
+        }
     }
 `;
 
-export const Content = styled.div`
-    font-size: 2em;
-    text-align: center;
-    padding: 10px;
-    background-color: #0118D8;
-    color: #FFF8F8;
-`;
-
-export const FooterElement = styled.footer`
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    height: 7rem;
-    color: #FFF8F8;
-    background-color:  #0118D8;
-`;
-
-// export const FooterElement = styled.footer`
-//     bottom: 0;
-//     position: absolute;
-//     width: 100%;
-//     height: 7rem;
-//     color: #FFF8F8;
-//     background: linear-gradient(
-//         180deg,
-//         #0118D8 0%,
-//         #1B56FD 60%,
-//         #E9DFC3 100%
-//     );
-// `;
