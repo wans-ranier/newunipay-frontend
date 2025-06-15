@@ -1,37 +1,35 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Home } from '@/pages/home'
 import { Cadastro } from '@/pages/cadastro'
 import { Login } from '@/pages/login'
 import { Dashboard } from '@/pages/dashboard'
-import { HeaderComponent } from './styles'
 import { UnsortedList, LinkItem } from './styles'
+import '@/assets/css/bubbleStyles.css'
 
 function AppRoutes() {
 
   return (
     <>
       <Router>
-
         <UnsortedList>
-          <LinkItem>
-            <Link to='/'>Home</Link>
+          <LinkItem className='LinkPai'>
+            <Link className='LinkRouter' to='/'>Home</Link>
+            <span></span><span></span><span></span><span></span><span></span>
           </LinkItem>
-          <LinkItem>
-            <Link to='/dashboard'>Dashboard</Link>
+          <LinkItem className='LinkPai'>
+            <Link className='LinkRouter' to='/dashboard'>Dashboard</Link>
+            <span></span><span></span><span></span><span></span><span></span>
           </LinkItem>
-          <LinkItem>
-            <Link to='/cadastro'>Cadastro</Link>
+          <LinkItem className='LinkPai'>
+            <Link className='LinkRouter' to='/cadastro'>Cadastro</Link>
+            <span></span><span></span><span></span><span></span><span></span>
           </LinkItem>
-          <LinkItem>
-            <Link to='/login'>Login</Link>
+          <LinkItem className='LinkPai'>
+            <Link className='LinkRouter' to='/login'>Login</Link>
+            <span></span><span></span><span></span><span></span><span></span>
           </LinkItem>
-
         </UnsortedList>
 
-        <HeaderComponent>
-          <h1>Unipay Visual</h1>
-          <p>Visualização de dados do Unipay</p>
-        </HeaderComponent>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/cadastro' element={<Cadastro />}></Route>
@@ -40,7 +38,7 @@ function AppRoutes() {
         </Routes>
       </Router>
     </>
-  );
-};
+  )
+}
 
 export default AppRoutes;

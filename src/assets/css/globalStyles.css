@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+body{
+    font-family: 'Secular One', sans-serif;
+    background-color: #E9DFC3;
+}
+
+p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
