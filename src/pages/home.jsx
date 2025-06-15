@@ -1,14 +1,14 @@
 import React from "react";
-import { Content } from "../styles";
+import { Section } from "../components/Section";
 export const Home = () => {
- return (
+  return (
     <React.Fragment>
-      <Content>
+      <Section>
         <h1>Bem-vindo ao Unipay</h1>
         <p>Esta é uma aplicação para visualização de dados do Unipay.</p>
         <p>Utilize o menu lateral para navegar entre as diferentes seções.</p>
         <p>Para mais informações, consulte a documentação ou entre em contato com o suporte.</p>
-      </Content>  
+      </Section>
     </React.Fragment>
 
   );

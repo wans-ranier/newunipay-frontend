@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 body{
-    font-family: 'Secular One', sans-serif;
-    background-color: #E9DFC3;
+    background-color: #23548C;
+    color: white;
+    margin: 0 40px;
 }
 
-p {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
+a, a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    font-size: 11pt;
+    font-weight: 600;
 }

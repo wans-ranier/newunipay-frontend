@@ -1,5 +1,4 @@
-import React from 'react';
-import { Content } from '../styles';
+import React, { useState } from 'react';
 
 export const Login = () => {
     const [nome, setNome] = useState('');
@@ -43,7 +42,6 @@ export const Login = () => {
 
     return (
         <React.Fragment>
-            <Content>
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -69,7 +67,6 @@ export const Login = () => {
                         {loading ? 'Entrando...' : 'Entrar'}
                     </button>
                 </form>
-            </Content>
         </React.Fragment>
     );
 };
