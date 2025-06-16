@@ -2,17 +2,20 @@ import { useState } from 'react';
 import { Section } from "@/components/Section";
 import '@/assets/css/cadastroStyles.css'
 import { Link, useNavigate } from 'react-router-dom';
+import { createUser } from '../services/userService';
 
 export const Cadastro = () => {
     const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
+    const initialFormDataState = {
         name: "",
         surname: "",
         email: "",
-        birth_date: new Date().toISOString().split('T')[0],
+        birth_date: "",
         password: ""
-    })
+    }
+
+    const [formData, setFormData] = useState(initialFormDataState)
 
     const changeValues = (e) => {
         const { name, value } = e.target
@@ -22,12 +25,17 @@ export const Cadastro = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Implementar a lógica de persistência do db.
-        console.log(formData)
-        alert('Cadastro realizado com sucesso!');
-        navigate('/login')
+
+        try {
+            const newUser = await createUser(formData);
+            alert(newUser.message);
+            navigate('/login')
+        } catch (error) {
+            alert(error.response?.data?.message);
+            setFormData(initialFormDataState)
+        }
     };
     return (
         <Section className="cadastro-section">
@@ -76,6 +84,8 @@ export const Cadastro = () => {
                         type="date"
                         name='birth_date'
                         value={formData.birth_date}
+                        min="1900-1-1"
+                        max="2022-12-31"
                         onChange={changeValues}
                         required
                     />

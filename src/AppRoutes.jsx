@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/home'
-import { Cadastro } from './pages/cadastro'
-import { Login } from './pages/login'
-import { Dashboard } from './pages/dashboard'
+import { Home } from './pages/Home'
+import { Login } from './pages/Login'
+import { Dashboard } from './pages/Dashboard'
 import { MainLayout } from './layouts/MainLayout'
 import { Equipe } from './pages/Equipe'
-import { Sobre } from './pages/sobre'
+import { Sobre } from './pages/Sobre'
+import { Cadastro } from './pages/Cadastro'
 
 function AppRoutes() {
   return (

@@ -33,7 +33,7 @@ export async function getUserByEmail(email) {
 
 export async function createUser(userData) {
     try {
-        const res = await api.post('/user' , userData);
+        const res = await api.post('/users' , userData);
         return res.data;
     } catch (error) {
         console.error('Erro ao criar usuário: ', error);
@@ -43,7 +43,7 @@ export async function createUser(userData) {
 
 export async function loginUser(credentials) {
     try {
-        const res = await api.post('/user/login', credentials);
+        const res = await api.post('/users/login', credentials);
         return res.data;
     } catch (error) {
         console.error('Erro ao realizar o login : ', error);
@@ -53,7 +53,7 @@ export async function loginUser(credentials) {
 
 export async function updateUser(userData) {
     try {
-        const res = await api.put('/user/', userData);
+        const res = await api.put('/users/', userData);
         return res.data;
     } catch (error) {
         console.error('Erro ao atualizar usuário: ', error);
@@ -61,9 +61,9 @@ export async function updateUser(userData) {
     }
 }
 
-export async function deleteUser(userID) {
+export async function deleteUser() {
     try {
-        const res = await api.delete('/user/' , userID);
+        const res = await api.delete('/users/');
         return res.data;
     } catch (error) {
         console.error('Erro ao deletar usuário: ', error);

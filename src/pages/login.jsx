@@ -2,14 +2,17 @@ import { useState } from 'react';
 import { Section } from "@/components/Section";
 import '@/assets/css/loginStyles.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../services/userService';
 
 export const Login = () => {
     const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
+    const initialFormDataState = {
         email: "",
         password: ""
-    });
+    }
+
+    const [formData, setFormData] = useState(initialFormDataState);
 
     const changeValues = (e) => {
         const { name, value } = e.target;
@@ -19,13 +22,17 @@ export const Login = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Implementar a lógica de autenticação aqui
-        console.log(formData);
-        alert('Login realizado com sucesso!');
-        navigate('/dashboard'); // redireciona pra home
+        try {
+            const user = await loginUser(formData);
+            alert(user.message);
+            navigate('/dashboard')
+        } catch (error) {
+            alert(error.response?.data?.message);
+            setFormData(initialFormDataState)
+        }
     };
     return (
         <Section className="login-section">
