@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100dvh;
+    padding: 0 40px;
 }
 
 .cadastro-about {
