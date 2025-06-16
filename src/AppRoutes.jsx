@@ -6,8 +6,10 @@ import { MainLayout } from './layouts/MainLayout'
 import { Equipe } from './pages/Equipe'
 import { Sobre } from './pages/Sobre'
 import { Cadastro } from './pages/Cadastro'
+import { PrivateRoute } from './components/PrivateRoute'
 
 function AppRoutes() {
+
   return (
     <>
       <Router>
@@ -19,7 +21,7 @@ function AppRoutes() {
             <Route path='/sobre' element={<Sobre />}></Route>
           </Route>
           {/* Rotas que são para autenticação ou a exigem. */}
-          <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
           <Route path='/cadastro' element={<Cadastro />}></Route>
           <Route path='/login' element={<Login />}></Route>
         </Routes>

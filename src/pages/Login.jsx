@@ -47,6 +47,7 @@ export const Login = () => {
                         className="login-input"
                         type="email"
                         name='email'
+                        placeholder='exemplo@gmail.com'
                         value={formData.email}
                         onChange={changeValues}
                         required
@@ -58,6 +59,7 @@ export const Login = () => {
                         className="login-input"
                         type="password"
                         name='password'
+                        placeholder='@unipay!'
                         value={formData.password}
                         onChange={changeValues}
                         required

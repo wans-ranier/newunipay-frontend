@@ -1,19 +1,19 @@
 import api from './index'
 
-export  async function getUsers() {
-    try{
+export async function getUsers() {
+    try {
         const res = await api.get('/users');
         return res.data;
-    }catch (error){
+    } catch (error) {
         console.error('Erro ao buscar usuários: ', error);
         throw error;
     }
-} 
+}
 
 
-export async function getUserByID(id) {
+export async function getUser() {
     try {
-        const res = await api.get(`/users/${id}`);
+        const res = await api.get(`/users/me`);
         return res.data;
     } catch (error) {
         console.error('Erro ao buscar usuário pelo id: ', error);
@@ -33,7 +33,7 @@ export async function getUserByEmail(email) {
 
 export async function createUser(userData) {
     try {
-        const res = await api.post('/users' , userData);
+        const res = await api.post('/users', userData);
         return res.data;
     } catch (error) {
         console.error('Erro ao criar usuário: ', error);
