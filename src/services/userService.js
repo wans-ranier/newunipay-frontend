@@ -33,7 +33,7 @@ export async function getUserByEmail(email) {
 
 export async function createUser(userData) {
     try {
-        const res = await api.post('/user/' , userData);
+        const res = await api.post('/user' , userData);
         return res.data;
     } catch (error) {
         console.error('Erro ao criar usuário: ', error);

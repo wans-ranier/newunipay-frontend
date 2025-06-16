@@ -2,7 +2,7 @@ import api from './index'
 
 export  async function getAllTransactions() {
     try{
-        const res = await api.get('/transaction/');
+        const res = await api.get('/transaction');
         return res.data;
     }catch (error){
         console.error('Erro ao buscar todas as transações: ', error);
@@ -36,7 +36,7 @@ export async function withDrawalTrasaction(walletData) {
         const res = await api.post('/transaction/withdrawal' , walletData);
         return res.data;
     } catch (error) {
-        console.error('Erro ao realizar : ', error);
+        console.error('Erro ao realizar o saque : ', error);
         throw error;
     }
 }
