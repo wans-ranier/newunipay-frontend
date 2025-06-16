@@ -3,6 +3,7 @@ import { Section } from "@/components/Section";
 import '@/assets/css/cadastroStyles.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userService';
+import { createWallet } from '../services/walletService';
 
 export const Cadastro = () => {
     const navigate = useNavigate();
@@ -29,7 +30,13 @@ export const Cadastro = () => {
         e.preventDefault();
 
         try {
+            // Criando um novo usuário
             const newUser = await createUser(formData);
+            // Criando a Carteira em sequência com os dados retornado do novo usuário.
+            await createWallet({
+                user_id: newUser.user.id
+            });
+
             alert(newUser.message);
             navigate('/login')
         } catch (error) {
@@ -49,6 +56,7 @@ export const Cadastro = () => {
                     <input
                         className="cadastro-input"
                         type="text"
+                        placeholder='João'
                         value={formData.name}
                         name='name'
                         onChange={changeValues}
@@ -60,6 +68,7 @@ export const Cadastro = () => {
                     <input
                         className="cadastro-input"
                         type="text"
+                        placeholder='Rodrigues'
                         name='surname'
                         value={formData.surname}
                         onChange={changeValues}
@@ -72,6 +81,7 @@ export const Cadastro = () => {
                         className="cadastro-input"
                         type="email"
                         name='email'
+                        placeholder='exemplo@gmail.com'
                         value={formData.email}
                         onChange={changeValues}
                         required
@@ -96,6 +106,7 @@ export const Cadastro = () => {
                         className="cadastro-input"
                         type="password"
                         name='password'
+                        placeholder='@unipay!'
                         value={formData.password}
                         onChange={changeValues}
                         required
