@@ -35,7 +35,7 @@ main .blocosDash {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; 
 }
 
 #Transacoes {
@@ -47,8 +47,9 @@ main .blocosDash {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(7, 7, 7, 0.1);
+    background-color: #8dbafa;
     font-size: 16px;
-    color: #333;
+    color: #414a65;
     text-align: center;
 }
 

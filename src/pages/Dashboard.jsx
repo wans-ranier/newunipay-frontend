@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '@/assets/css/dashbordStyles.css';
-import { Section } from '../components/Section';
 
 export const Dashboard = () => {
   const [users, setUsers] = useState([]);
