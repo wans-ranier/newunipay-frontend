@@ -1,0 +1,65 @@
+/* main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #343434;
+    height: 1000px;
+} */
+
+main {
+    display: grid;
+    grid-template-columns:20% 60% auto;
+    gap: 20px;
+    background-color: #f4f4f4;
+}
+
+main .blocosDash {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(7, 7, 7, 0.1);
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    padding: 20%;
+}
+
+
+#MyMenu {
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#MyMenu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#Transacoes {
+    grid-area: 1 / 3 / 4 / 4;
+}
+
+.blocos {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(7, 7, 7, 0.1);
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+#painelgeral {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5%;
+}
+
+.topo{
+    top: 0;
+    margin-bottom: 5%;
+    grid-area: 1 /1 /2 / 3;
+}
