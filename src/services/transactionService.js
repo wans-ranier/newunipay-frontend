@@ -2,7 +2,7 @@ import api from './index'
 
 export  async function getAllTransactions() {
     try{
-        const res = await api.get('/transaction/');
+        const res = await api.get('/transactions');
         return res.data;
     }catch (error){
         console.error('Erro ao buscar todas as transações: ', error);
@@ -13,7 +13,7 @@ export  async function getAllTransactions() {
 
 export async function getTransactionByID(id) {
     try {
-        const res = await api.get(`/transaction/${id}`);
+        const res = await api.get(`/transactions/${id}`);
         return res.data;
     } catch (error) {
         console.error('Erro ao buscar transação pelo id: ', error);
@@ -23,7 +23,7 @@ export async function getTransactionByID(id) {
 
 export async function getTransactionByWalletID(id) {
     try {
-        const res = await api.get(`/transaction/wallet/${id}`);
+        const res = await api.get(`/transactions/wallet/${id}`);
         return res.data;
     } catch (error) {
         console.error('Erro ao buscar transação pelo id da carteira : ', error);
@@ -33,17 +33,17 @@ export async function getTransactionByWalletID(id) {
 
 export async function withDrawalTrasaction(walletData) {
     try {
-        const res = await api.post('/transaction/withdrawal' , walletData);
+        const res = await api.post('/transactions/withdrawal' , walletData);
         return res.data;
     } catch (error) {
-        console.error('Erro ao realizar : ', error);
+        console.error('Erro ao realizar o saque : ', error);
         throw error;
     }
 }
 
 export async function depositTransaction(value) {
     try {
-        const res = await api.post('/transaction/deposit' , value);
+        const res = await api.post('/transactions/deposit' , value);
         return res.data;
     } catch (error) {
         console.error('Erro ao depositar valor: ', error);
@@ -53,7 +53,7 @@ export async function depositTransaction(value) {
 
 export async function transferTrasaction(value) {
     try {
-        const res = await api.post('/transaction/transfer' , value);
+        const res = await api.post('/transactions/transfer' , value);
         return res.data;
     } catch (error) {
         console.error('Erro ao transferir valor: ', error);
