@@ -1,72 +1,69 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Section } from "@/components/Section";
+import '@/assets/css/loginStyles.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-    const [nome, setNome] = useState('');
-    const [senha, setSenha] = useState('');
-    const [erro, setErro] = useState('');
-    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    });
+
+    const changeValues = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setErro('');
-        setLoading(true);
 
-        // Área reservada para integração com backend
-        // Exemplo de requisição (ajuste a URL e método quando o backend estiver pronto)
-        /*
-        try {
-            const response = await fetch('http://localhost:PORTA/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, senha }),
-            });
-            if (!response.ok) {
-                throw new Error('Usuário ou senha inválidos');
-            }
-            // Aqui você pode tratar o sucesso do login, como salvar token, redirecionar, etc.
-            alert('Login realizado com sucesso!');
-        } catch (err) {
-            setErro(err.message);
-        }
-        */
-        // Remova este bloco abaixo quando conectar ao backend
-        setTimeout(() => {
-            setLoading(false);
-            if (nome === 'admin' && senha === '1234') {
-                alert('Login simulado com sucesso!');
-            } else {
-                setErro('Usuário ou senha inválidos (simulação).');
-            }
-        }, 1000);
+        // Implementar a lógica de autenticação aqui
+        console.log(formData);
+        alert('Login realizado com sucesso!');
+        navigate('/dashboard'); // redireciona pra home
     };
-
     return (
-        <React.Fragment>
-                <h1>Login</h1>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Nome:</label>
-                        <input
-                            type="text"
-                            value={nome}
-                            onChange={(e) => setNome(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label>Senha:</label>
-                        <input
-                            type="password"
-                            value={senha}
-                            onChange={(e) => setSenha(e.target.value)}
-                            required
-                        />
-                    </div>
-                    {erro && <p style={{ color: 'red' }}>{erro}</p>}
-                    <button type="submit" disabled={loading}>
-                        {loading ? 'Entrando...' : 'Entrar'}
-                    </button>
-                </form>
-        </React.Fragment>
+        <Section className="login-section">
+            <div className='login-about'>
+                <h1>UniPay</h1>
+                <h2 className="login-title">Realizar o Login</h2>
+            </div>
+            <form className="login-form" onSubmit={handleSubmit}>
+                <div className="login-form-group">
+                    <label className="login-label">Email</label>
+                    <input
+                        className="login-input"
+                        type="email"
+                        name='email'
+                        value={formData.email}
+                        onChange={changeValues}
+                        required
+                    />
+                </div>
+                <div className="login-form-group">
+                    <label className="login-label">Senha</label>
+                    <input
+                        className="login-input"
+                        type="password"
+                        name='password'
+                        value={formData.password}
+                        onChange={changeValues}
+                        required
+                    />
+                </div>
+                <button className="login-submit-btn" type="submit">
+                    Logar
+                </button>
+                <div className='login-or-cadastro'>
+                    <p>Ainda não possui uma conta? <Link className='login-or-cadastro-text' to={"/cadastro"}>Cadastre-se</Link></p>
+                </div>
+            </form>
+        </Section>
     );
 };
+

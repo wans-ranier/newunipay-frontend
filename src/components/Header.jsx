@@ -13,7 +13,7 @@ export const Header = () => {
                     <Link to={"/dashboard"}>Dashboard</Link>
                 </ul>
             </nav>
-            <button>Login</button>
+            <Link to={"/login"}><button>Login</button></Link>
         </header>
     )
 }
