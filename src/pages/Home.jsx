@@ -1,9 +1,10 @@
 import React from "react";
 import { Section } from "../components/Section";
+import '@/assets/css/homeStyles.css'; 
 export const Home = () => {
   return (
     <React.Fragment>
-      <Section>
+      <Section className="home-section">
         <h1>Bem-vindo ao Unipay</h1>
         <p>Esta é uma aplicação para visualização de dados do Unipay.</p>
         <p>Utilize o menu lateral para navegar entre as diferentes seções.</p>
@@ -12,4 +13,4 @@ export const Home = () => {
     </React.Fragment>
 
   );
-}
+};
