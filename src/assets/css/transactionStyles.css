@@ -1,0 +1,39 @@
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 4rem;
+    background-color: rgba(128, 128, 128, 0.089);
+}
+
+.transaction-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.transaction-icon {
+    display: flex;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    background-color: #0077ff42;
+}
+
+.transaction-info-type {
+    font-weight: 700;
+}
+
+.transaction-info-id {
+    font-weight: 400;
+}
+
+.transaction-amount p{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}

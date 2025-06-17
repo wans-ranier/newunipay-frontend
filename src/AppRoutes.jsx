@@ -7,6 +7,7 @@ import { Equipe } from './pages/Equipe'
 import { Sobre } from './pages/Sobre'
 import { Cadastro } from './pages/Cadastro'
 import { PrivateRoute } from './components/PrivateRoute'
+import { DashboardLayout } from './layouts/DashboardLayout'
 
 function AppRoutes() {
 
@@ -16,12 +17,15 @@ function AppRoutes() {
         <Routes>
           {/* Rotas principais que terão o Menu principal. */}
           <Route element={<MainLayout />}>
-            <Route index path='/' element={<Home />}></Route>
-            <Route path='/equipe' element={<Equipe />}></Route>
-            <Route path='/sobre' element={<Sobre />}></Route>
+            <Route index element={<Home />}></Route>
+            <Route path='equipe' element={<Equipe />}></Route>
+            <Route path='sobre' element={<Sobre />}></Route>
           </Route>
           {/* Rotas que são para autenticação ou a exigem. */}
-          <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
+          <Route path='dashboard' element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
+            <Route index element={<Dashboard />}></Route>
+            <Route path='perfil' element={<>Perfil</>}></Route>
+          </Route>
           <Route path='/cadastro' element={<Cadastro />}></Route>
           <Route path='/login' element={<Login />}></Route>
         </Routes>
