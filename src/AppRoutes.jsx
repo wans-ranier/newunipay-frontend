@@ -1,46 +1,37 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Home } from '@/pages/home'
-import { Cadastro } from '@/pages/cadastro'
-import { Login } from '@/pages/login'
-import { Dashboard } from '@/pages/dashboard'
-import { HeaderComponent } from './styles'
-import { UnsortedList, LinkItem } from './styles'
+import { Home } from './pages/Home'
+import { Login } from './pages/Login'
+import { Dashboard } from './pages/Dashboard'
+import { MainLayout } from './layouts/MainLayout'
+import { Equipe } from './pages/Equipe'
+import { Sobre } from './pages/Sobre'
+import { Cadastro } from './pages/Cadastro'
+import { PrivateRoute } from './components/PrivateRoute'
+import { DashboardLayout } from './layouts/DashboardLayout'
 
 function AppRoutes() {
 
   return (
     <>
       <Router>
-
-        <UnsortedList>
-          <LinkItem>
-            <Link to='/'>Home</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to='/dashboard'>Dashboard</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to='/cadastro'>Cadastro</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to='/login'>Login</Link>
-          </LinkItem>
-
-        </UnsortedList>
-
-        <HeaderComponent>
-          <h1>Unipay Visual</h1>
-          <p>Visualização de dados do Unipay</p>
-        </HeaderComponent>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
+          {/* Rotas principais que terão o Menu principal. */}
+          <Route element={<MainLayout />}>
+            <Route index element={<Home />}></Route>
+            <Route path='equipe' element={<Equipe />}></Route>
+            <Route path='sobre' element={<Sobre />}></Route>
+          </Route>
+          {/* Rotas que são para autenticação ou a exigem. */}
+          <Route path='dashboard' element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
+            <Route index element={<Dashboard />}></Route>
+            <Route path='perfil' element={<>Ainda a implementar...</>}></Route>
+          </Route>
           <Route path='/cadastro' element={<Cadastro />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route path='/dashboard' element={<Dashboard />}></Route>
         </Routes>
       </Router>
     </>
-  );
-};
+  )
+}
 
 export default AppRoutes;

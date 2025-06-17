@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 10dvh;
+    width: 100%;
+    padding: 0 40px;
+}
+
+nav>ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+header button {
+    border-radius: 15px;
+    width: 7rem;
+    height: 2.5rem;
+}
