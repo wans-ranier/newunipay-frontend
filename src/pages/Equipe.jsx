@@ -3,6 +3,8 @@ import '@/assets/css/equipeStyles.css'
 import Yoda from '@/assets/img/yoda.png'
 import Chubaka from '@/assets/img/chubaka.jpg'
 import Griveous from '@/assets/img/griveous.png'
+import K2so from '@/assets/img/k2so.png'
+
 export const Equipe = () => {
   return (
     <Section>
@@ -25,7 +27,7 @@ export const Equipe = () => {
         </div>
         <div className="equipe-card">
           <div className="equipe-card-image">
-            <img src="" alt="" />
+            <img src={K2so} alt="" />
           </div>
           <h4>Lucas Repinaldo</h4>
         </div>
