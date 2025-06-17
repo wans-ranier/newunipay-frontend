@@ -24,7 +24,7 @@ function AppRoutes() {
           {/* Rotas que são para autenticação ou a exigem. */}
           <Route path='dashboard' element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
             <Route index element={<Dashboard />}></Route>
-            <Route path='perfil' element={<>Perfil</>}></Route>
+            <Route path='perfil' element={<>Ainda a implementar...</>}></Route>
           </Route>
           <Route path='/cadastro' element={<Cadastro />}></Route>
           <Route path='/login' element={<Login />}></Route>
