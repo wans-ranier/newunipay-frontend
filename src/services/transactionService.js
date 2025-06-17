@@ -1,14 +1,14 @@
 import api from './index'
 
-export  async function getAllTransactions() {
-    try{
+export async function getAllTransactions() {
+    try {
         const res = await api.get('/transactions');
         return res.data;
-    }catch (error){
+    } catch (error) {
         console.error('Erro ao buscar todas as transações: ', error);
         throw error;
     }
-} 
+}
 
 
 export async function getTransactionByID(id) {
@@ -21,7 +21,7 @@ export async function getTransactionByID(id) {
     }
 }
 
-export async function getTransactionByWalletID(id) {
+export async function getAllTransactionsByWalletID(id) {
     try {
         const res = await api.get(`/transactions/wallet/${id}`);
         return res.data;
@@ -31,9 +31,9 @@ export async function getTransactionByWalletID(id) {
     }
 }
 
-export async function withDrawalTrasaction(walletData) {
+export async function withDrawalTrasaction(amount) {
     try {
-        const res = await api.post('/transactions/withdrawal' , walletData);
+        const res = await api.post('/transactions/withdrawal', { amount });
         return res.data;
     } catch (error) {
         console.error('Erro ao realizar o saque : ', error);
@@ -41,9 +41,10 @@ export async function withDrawalTrasaction(walletData) {
     }
 }
 
-export async function depositTransaction(value) {
+export async function depositTransaction(amount) {
     try {
-        const res = await api.post('/transactions/deposit' , value);
+        console.log(amount)
+        const res = await api.post('/transactions/deposit', { amount });
         return res.data;
     } catch (error) {
         console.error('Erro ao depositar valor: ', error);
@@ -51,9 +52,9 @@ export async function depositTransaction(value) {
     }
 }
 
-export async function transferTrasaction(value) {
+export async function transferTrasaction(data) {
     try {
-        const res = await api.post('/transactions/transfer' , value);
+        const res = await api.post('/transactions/transfer', data);
         return res.data;
     } catch (error) {
         console.error('Erro ao transferir valor: ', error);

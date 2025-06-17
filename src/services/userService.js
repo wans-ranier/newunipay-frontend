@@ -21,9 +21,19 @@ export async function getUser() {
     }
 }
 
+export async function getUserById(id) {
+    try {
+        const res = await api.get(`/users/${id}`);
+        return res.data;
+    } catch (error) {
+        console.error('Erro ao buscar usuário pelo id: ', error);
+        throw error;
+    }
+}
+
 export async function getUserByEmail(email) {
     try {
-        const res = await api.get(`/users/${email}`);
+        const res = await api.get(`/users/email/${email}`);
         return res.data;
     } catch (error) {
         console.error('Erro ao buscar usuários pelo email: ', error);
@@ -71,3 +81,12 @@ export async function deleteUser() {
     }
 }
 
+export async function logoutUser() {
+    try {
+        const res = await api.post('/users/logout');
+        return res.data;
+    } catch (error) {
+        console.error('Erro ao fazer logout: ', error);
+        throw error;
+    }
+}

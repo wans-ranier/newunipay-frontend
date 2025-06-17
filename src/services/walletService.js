@@ -1,14 +1,14 @@
 import api from './index'
 
-export  async function getWallets() {
-    try{
+export async function getWallets() {
+    try {
         const res = await api.get('/wallets');
         return res.data;
-    }catch (error){
+    } catch (error) {
         console.error('Erro ao buscar carteiras: ', error);
         throw error;
     }
-} 
+}
 
 
 export async function getWalletByID(id) {
@@ -21,9 +21,19 @@ export async function getWalletByID(id) {
     }
 }
 
+export async function getWalletByUserID() {
+    try {
+        const res = await api.get(`/wallets/user/id`);
+        return res.data;
+    } catch (error) {
+        console.error('Erro ao buscar carteira pelo id: ', error);
+        throw error;
+    }
+}
+
 export async function createWallet(walletData) {
     try {
-        const res = await api.post('/wallets' , walletData);
+        const res = await api.post('/wallets', walletData);
         return res.data;
     } catch (error) {
         console.error('Erro ao criar carteira: ', error);
