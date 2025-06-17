@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     height: 100%;
 }
 
@@ -36,4 +36,47 @@
     align-items: center;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+.dashboard-menu-item {
+    cursor: pointer;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: #0077ff42;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dashboard-content {
+    width: 100%;
+}
+
+.dashboard-cards {
+    display: flex;
+    padding: 10px;
+    gap: 2.5rem;
+    height: 100%;
+}
+
+.card {
+    border-radius: 10px;
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    padding: 25px;
+    background-color: white;
+}
+
+.card_saldo {
+    width: 15rem;
+    height: 15rem;
+}
+
+.dashboard-transactions {
+    color: black;
+    width: 20rem;
+    height: 100%;
+    background-color: white;
 }
