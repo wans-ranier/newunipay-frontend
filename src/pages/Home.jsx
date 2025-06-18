@@ -9,6 +9,7 @@ export const Home = () => {
         <p>Esta é uma aplicação para gerenciamento da sua carteira digital.</p>
         <p>Utilize o menu lateral para navegar entre as diferentes seções.</p>
         <p>Para mais informações, consulte a documentação ou entre em contato com o suporte.</p>
+        <img src="src\assets\img\robot.gif" alt="robozim" />
       </Section>
     </React.Fragment>
 

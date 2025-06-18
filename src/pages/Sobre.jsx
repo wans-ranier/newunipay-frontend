@@ -8,8 +8,10 @@ export const Sobre = () => {
 
                 <div> 
             <h1>Sobre</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quod quibusdam quaerat, consequatur quis consequuntur, similique iure officiis a sed dolore adipisci nam ducimus quia! Eius accusamus laboriosam dicta? Cum!</p>
+            <p>Esse projeto visa desenvolver uma carteira digital, na qual os usuários possam transferir recursos entre si (Dinheiro fictício), algo semelhante ao Mercado Pago, PayPal ou PicPay. </p>
             </div>
+            <img src="src\assets\img\robot.gif" alt="robozim" />
+
                 </div>
             </Section>
     )

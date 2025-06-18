@@ -23,6 +23,11 @@
     line-height: 1.6;
 }
 
+img {
+    height: 70%;
+}
+
+
 @media (max-width: 700px) {
     .home-section {
         max-width: 95%;
